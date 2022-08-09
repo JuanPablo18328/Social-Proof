@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+@import '../abstracts/mixinsfunc';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 16px;
+  background: url(../../images/bg-pattern-top-mobile.svg), url(../../images/bg-pattern-bottom-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: top left, bottom right;
+
+  @include mediaTablet(){
+      background: url(../../images/bg-pattern-top-desktop.svg), url(../../images/bg-pattern-bottom-desktop.svg);
+      background-repeat: no-repeat;
+      background-position: top left, bottom right;
+      background-size: 400px;
+  }
+
+  @include mediaSomething2(){
+    background-size: 580px;
+  }
+}
+
+.container {
+  margin: 80px auto;
+  display: flex;
+  flex-direction: column;
+
+  @include mediaSomething1(){
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    row-gap: 25px;
+  }
+
+  @include mediaSomething2(){
+    margin: 125px auto;
+    max-width: 1110px;
+  }
+}

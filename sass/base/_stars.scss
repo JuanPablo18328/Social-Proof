@@ -1,0 +1,73 @@
+@import '../abstracts/mixinsfunc';
+
+.stars__container {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    
+     @include media(){
+
+        padding: 0 25px;
+    }
+
+    @include mediaSomething1(){
+        grid-column: 6 / -1;
+    }
+
+    @include mediaDesktop(){
+        grid-column: 7 / -1;
+        padding: 0;
+    }
+    
+    .stars {
+        background-color: $lightGrayishMagenta;
+        border-radius: 4px;
+        margin: 8px 0;
+        width: 330px;
+        height: 80px;
+        padding: 15px;
+        font-weight: 700;
+        color: $veryDarkMagenta;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        .fivestars {
+            min-width: 110px;
+        }
+
+        .text {
+            min-width: 240px;
+            text-align: center;
+        }
+
+        @include mediaTablet(){
+            flex-direction: row;
+            width: 444px;
+            height: 50px;
+            justify-content: center;
+        }
+
+
+    }
+
+    .star1 {
+        @include media(){
+
+            align-self: flex-start;
+        }
+
+    }
+
+    .star3 {
+        @include media(){
+
+            align-self: flex-end;
+        }
+    }
+
+}
+
